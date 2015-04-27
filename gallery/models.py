@@ -1,7 +1,7 @@
 from django.db import models
 
 
-class Group(models.Model):
+class GalleryGroup(models.Model):
 
     title = models.CharField(max_length=100, default='')
     description = models.TextField()
@@ -31,7 +31,7 @@ class Artwork(models.Model):
     published_date = models.DateTimeField(
             blank=True, null=True)
     art = models.ImageField(upload_to="media/art")
-    group = models.ForeignKey('Group')
+    group = models.ForeignKey('GalleryGroup')
 
     def publish(self):
         self.save()

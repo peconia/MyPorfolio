@@ -2,6 +2,13 @@
 <head>
 </head>
 <body>
-<h1>Hello!!!</h1>
+    <div>
+        <h1>Galleries</h1>
+        {% for galleryGroup in galleryGroups %}
+          <h3><a href=""> {{ galleryGroup.title }} </a></h3>
+          <p>{{ galleryGroup.description|linebreaks }} </p>
+        {% endfor %}
+        
+    </div>
 </body>
 </html>
