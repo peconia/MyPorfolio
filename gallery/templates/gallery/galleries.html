@@ -1,14 +1,64 @@
-<!DOCTYPE html>
-<head>
-</head>
-<body>
-    <div>
-        <h1>Galleries</h1>
-        {% for galleryGroup in galleryGroups %}
-          <h3><a href=""> {{ galleryGroup.title }} </a></h3>
-          <p>{{ galleryGroup.description|linebreaks }} </p>
-        {% endfor %}
+
+{% extends 'gallery/base.html' %}   
+{% load staticfiles %} 
+{% block content %} 
+      
+      
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+ 
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+  </ol>
+ 
+  <!-- Slider Content (Wrapper for slides )-->
+  <div class="carousel-inner">
+    <div class="item active">
         
+      <img src="{% static 'images/zef.jpg' %}" alt="First slide">
+
     </div>
-</body>
-</html>
+      <div class="item">
+      <img src="{% static 'images/nalle.jpg' %}" alt="second slide">
+
+    </div>
+    <div class="item">
+      <img src="{% static 'images/peter.jpg' %}" alt="third slide">
+    </div>
+      <div class="item">
+      <img src="{% static 'images/kiina.jpg' %}" alt="fourth slide">
+    </div>
+    </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left"></span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right"></span>
+  </a>
+</div>
+      
+      
+      
+    <div class="container-fluid marketing">
+      <div class="row">
+        <div class="col-md-6">
+
+        {% for galleryGroup in galleryGroups %}
+          <h2> {{ galleryGroup.title }} </h2>
+          <p>{{ galleryGroup.description|linebreaks }} </p>
+          <p><a class="btn btn-lg btn-primary btn-custom" href=''> View {{ galleryGroup.title }} Gallery &raquo; </a></p>
+        {% endfor %}
+
+        </div><!-- /.col-md-6 -->
+       
+      </div><!-- /.row -->
+    </div>
+
+    {% endblock content %}
+
+
+

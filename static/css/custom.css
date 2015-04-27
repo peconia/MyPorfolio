@@ -1,0 +1,110 @@
+
+body {
+    padding-top: 60px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.thumb {
+    margin-bottom: 30px;
+}
+
+footer {
+    margin: 50px 0;
+}
+
+/* move pics in carousel to center */
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Lobster', Georgia, Times, serif;
+    
+}
+
+.changeFont {
+     font-family: 'Lobster', Georgia, Times, serif;
+     font-size: 25px
+ }
+ 
+p, div {
+    font-family: 'Josefin Sans', Helvetica, Arial, sans-serif;
+}
+
+p {
+    font-size: 18px;
+    line-height: 25px;
+    margin-top: 15px;
+}
+
+
+body { 
+    background: url(/images/lightpaperfibers.png) repeat 0 0;
+}
+
+/* remove gradient background form carousel */
+.carousel-control.right, .carousel-control.left {
+  background-image:none;
+}
+
+
+/* custom button code */
+
+.btn-custom {
+  background-color: #3a0371;
+  border-color: #3a0371;
+}
+.btn-custom:hover,
+.btn-custom:focus,
+.btn-custom:active,
+.btn-custom.active {
+  background-color: #2d0258;
+  border-color: #21023f;
+}
+.btn-custom.disabled:hover,
+.btn-custom.disabled:focus,
+.btn-custom.disabled:active,
+.btn-custom.disabled.active,
+.btn-custom[disabled]:hover,
+.btn-custom[disabled]:focus,
+.btn-custom[disabled]:active,
+.btn-custom[disabled].active,
+fieldset[disabled] .btn-custom:hover,
+fieldset[disabled] .btn-custom:focus,
+fieldset[disabled] .btn-custom:active,
+fieldset[disabled] .btn-custom.active {
+  background-color: #3a0371;
+  border-color: #3a0371;
+}
+
+
+
+/* TESTING */
+
+.navbar-wrapper {
+  position: relative;
+  z-index: 10;
+  margin-top: 20px;
+  margin-bottom: −90px;
+}
+
+
+.marketing .col-md-6 {
+      text-align: center;
+    }
+    
+.marketing h2 {
+      font-weight: normal;
+    }
+    
+.marketing .col-md-6 p {
+      margin-left: 10px;
+      margin-right: 10px;
+    }
+
+.myface {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+
