@@ -1,0 +1,37 @@
+{% extends 'gallery/base.html' %} 
+
+{% block content %} 
+
+
+  
+    <div class="container">
+        {% if artworks %}
+        <div class="row">
+            <div class="col-md-10">        
+                <h1> {{ galleryGroups.title }} Gallery </h1>
+                <p>{{ galleryGroups.description|linebreaks }} </p>
+            </div>
+        </div> 
+
+        <div class="row">
+            {% for artwork in artworks %}
+
+            <div class="col-lg-4 col-md-6 col-xs-12 thumb">
+                <a class="thumbnail" href='{% url "art" art_id=artwork.id %}'>
+                    <img class="img-responsive" src="{{ artwork.art.url }}" alt="{{ artwork.title }}">
+                </a>
+            </div>
+            {% endfor %}
+        </div> <!-- row -->
+        {% else %}  
+
+            <div class="row">
+                <div class="col-md-10">  
+                    <h1>Oopsie!</h1>
+                    <p>No galleries with that name found.</p>
+                </div>
+            </div>
+        {% endif %}
+        </div> <!-- container -->
+
+{% endblock content %}
