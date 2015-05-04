@@ -1,0 +1,23 @@
+{% extends 'gallery/base.html' %} 
+{% load staticfiles %}
+{% block content %} 
+
+
+  
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <img src="{% static 'images/paivi.jpg' %}" alt="Paivi" class="img-circle myface">
+            </div>
+            <div class="col-md-8">
+                <h2>About Me</h2>
+                <p>I am awesome and I draw pictures. I've also painted like once or twice in my life so I am practically an artist.</p>
+                <h2>Contact me</h2>
+                <p>You can contact me by <a href="mailto:paivi@suomela.me">email</a>.</p>
+                
+            
+            </div>
+        </div>
+        
+
+{% endblock content %}

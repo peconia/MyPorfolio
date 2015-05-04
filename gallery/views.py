@@ -20,11 +20,6 @@ def gallery_detail(request, gallery_title_slug):
 
     return render(request, 'gallery/gallery_detail.html', context_dict)
 
-#def gallery_detail(request, pk):
- #   galleryGroups = get_object_or_404(GalleryGroup, pk=pk)
- #   artworks = Artwork.objects.filter(group=galleryGroups)
- #   return render(request, 'gallery/gallery_detail.html', 
- #       { 'galleryGroups': galleryGroups, 'artworks': artworks })
 
 def art_detail(request, art_id):
     artwork = get_object_or_404(Artwork, id=art_id)
@@ -43,4 +38,8 @@ def art_detail(request, art_id):
         previous = None
 
     return render(request, 'gallery/art_detail.html', {'artwork': artwork, 'next': next, 'previous': previous })
+
+def about_me(request):
+    
+    return render(request, 'gallery/about_me.html')
     

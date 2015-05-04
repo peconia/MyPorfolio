@@ -9,8 +9,7 @@
     <title>Paivi Suomela</title>
       
     <!-- fonts -->
-    <link href="http://fonts.googleapis.com/css?family=Lobster" rel="stylesheet" type="text/css">
-    <link href="http://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet" type="text/css">
+    <link href='http://fonts.googleapis.com/css?family=Covered+By+Your+Grace|Cabin' rel='stylesheet' type='text/css'>
 
     <!-- Bootstrap --> 
     <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" media="screen">
@@ -46,16 +45,15 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
               <li class="dropdown"><a href="index.html" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-picture"></span> Gallery<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="drawings.html">Drawings</a></li>
-                    <li><a href="paintings.html">Paintings</a></li>
+                    <li><a href="{% url 'gallery.views.gallery_detail' gallery_title_slug='drawings' %}">Drawings</a></li>
+                    <li><a href="{% url 'gallery.views.gallery_detail' gallery_title_slug='paintings' %}">Paintings</a></li>
                   </ul>
                 
               </li>
               <li>
-                <a href="aboutMe.html" ><span class="glyphicon glyphicon-user"></span> About Me</a>
+                <a href="{% url 'gallery.views.about_me' %}" ><span class="glyphicon glyphicon-user"></span> About Me</a>
             </li>
             </ul>
           </div><!-- /.navbar-collapse -->
@@ -80,7 +78,7 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.0/masonry.pkgd.min.js"></script>
     <script src="{% static 'js/bootstrap.min.js' %}"></script>
   </body>
 </html>

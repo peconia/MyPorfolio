@@ -43,18 +43,21 @@
       
       
       
-    <div class="container-fluid marketing">
+    <div class="container">
       <div class="row">
-        <div class="col-md-6">
-
+    
+        <div
         {% for galleryGroup in galleryGroups %}
+          <div class="col-md-6 galleryOptions">
           <h2> {{ galleryGroup.title }} </h2>
           <p>{{ galleryGroup.description|linebreaks }} </p>
           <p><a class="btn btn-lg btn-primary btn-custom" 
                 href='{% url 'gallery.views.gallery_detail' gallery_title_slug=galleryGroup.slug %}'> View {{ galleryGroup.title }} Gallery &raquo; </a></p>
+            </div>
+           
         {% endfor %}
-
-        </div><!-- /.col-md-6 -->
+        
+        
        
       </div><!-- /.row -->
     </div>
