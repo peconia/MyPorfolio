@@ -12,8 +12,15 @@
         </div>
         <div class="row">
             <div class="col-md-10">
-                <h1> {{ artwork.title }} </h1>
+                <h1> {{ artwork.title }} - {{ artwork.published_date.year }}</h1>
                 <p>{{ artwork.description|linebreaks }} </p>
+                <p>{% if previous %}
+                    <a class="btn btn-lg btn-primary btn-custom" href='{% url "art" art_id=previous.id %}'>Previous</a>
+                    {% endif %}  
+                    {% if next %}
+                    <a class="btn btn-lg btn-primary btn-custom" href='{% url "art" art_id=next.id %}'>Next</a>
+                    {% endif %}
+                </p>
             </div>
         </div>
 

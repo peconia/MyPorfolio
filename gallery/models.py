@@ -41,7 +41,7 @@ class Artwork(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     published_date = models.DateTimeField(
-            blank=True, null=True)
+            blank=True)
     art = models.ImageField(upload_to="art")
     group = models.ForeignKey('GalleryGroup')
 
