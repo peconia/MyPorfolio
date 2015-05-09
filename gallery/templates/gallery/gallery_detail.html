@@ -13,10 +13,10 @@
             </div>
         </div> 
 
-        <div class="row">
+        <div class="row" id='art-images'>
             {% for artwork in artworks %}
 
-            <div class="col-lg-4 col-md-6 col-xs-12 thumb">
+            <div class="col-lg-4 col-md-6 col-xs-12 thumb image-box">
                 <a class="thumbnail" href='{% url "art" art_id=artwork.id %}'>
                     <img class="img-responsive" src="{{ artwork.art.url }}" alt="{{ artwork.title }}">
                 </a>

@@ -4,7 +4,19 @@ body {
 }
 
 .thumb {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
+}
+
+.image-box { 
+    padding: 0px;
+}
+
+#art-images {
+    padding: 0px;
+}
+
+.container {
+    padding: 0px;
 }
 
 footer {
@@ -94,31 +106,4 @@ fieldset[disabled] .btn-custom.active {
 
 
 
-/* TESTING */
 
-/*
-
-.navbar-wrapper {
-  position: relative;
-  z-index: 10;
-  margin-top: 20px;
-  margin-bottom: −90px;
-}
-
-
-.marketing .col-md-6 {
-      text-align: center;
-    }
-    
-.marketing h2 {
-      font-weight: normal;
-    }
-    
-.marketing .col-md-6 p {
-      margin-left: 10px;
-      margin-right: 10px;
-    }
-
-
-
-*/
