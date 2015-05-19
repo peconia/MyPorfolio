@@ -108,7 +108,7 @@ ALLOWED_HOSTS = ['*']
 STATIC_ROOT = 'staticfiles'
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.StaticFilesStorage'
 
-DEBUG = True
+DEBUG = False
 
 AWS_QUERYSTRING_AUTH = False
 AWS_S3_SECURE_URLS = False 
