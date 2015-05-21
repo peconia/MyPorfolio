@@ -12,7 +12,7 @@ def gallery_detail(request, gallery_title_slug):
     try:
         galleryGroups = GalleryGroup.objects.get(slug=gallery_title_slug)
         context_dict['galleryGroups'] = galleryGroups
-        artworks = Artwork.objects.filter(group=galleryGroups)
+        artworks = Artwork.objects.filter(group=galleryGroups).order_by('published_date')
         context_dict['artworks'] = artworks
 
     except GalleryGroup.DoesNotExist:

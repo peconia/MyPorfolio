@@ -15,27 +15,9 @@ class GalleryGroup(models.Model):
                 self.slug = slugify(self.title)
                 super(GalleryGroup, self).save(*args, **kwargs)
 
-   # def get_absolute_url(self, show="thumbnails"):
-    #    return reverse2("group", dpk=self.pk, show=show)
-
     def get_absolute_url(self):
         return reverse('gallery.views.gallery_detail', args=[str(self.id)])
-'''
-    link = URLField(blank=True, null=True)
 
-
-    def __unicode__(self):
-        return self.title
-
-    def get_absolute_url(self, show="thumbnails"):
-        return reverse2("group", dpk=self.pk, show=show)
-
-    def image_links(self):
-        lst = [img.image.name for img in self.images.all()]
-        lst = [link % ( settings.MEDIA_URL+img, basename(img) ) for img in lst]
-        return ", ".join(lst)
-    image_links.allow_tags = True
-'''
 
 class Artwork(models.Model):
     title = models.CharField(max_length=200)
