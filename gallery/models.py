@@ -2,6 +2,7 @@ from django.db import models
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 
+
 class GalleryGroup(models.Model):
 
     title = models.CharField(max_length=100, default='')
@@ -22,8 +23,7 @@ class GalleryGroup(models.Model):
 class Artwork(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
-    published_date = models.DateTimeField(
-            blank=True)
+    published_date = models.DateTimeField(blank=True)
     art = models.ImageField(upload_to="art")
     group = models.ForeignKey('GalleryGroup')
 

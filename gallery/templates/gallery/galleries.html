@@ -1,9 +1,7 @@
-
-{% extends 'gallery/base.html' %}   
+{% extends 'gallery/base.html' %}
 {% load staticfiles %} 
 {% block content %} 
-      
-      
+
     <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
  
   <!-- Indicators -->
@@ -17,13 +15,10 @@
   <!-- Slider Content (Wrapper for slides )-->
   <div class="carousel-inner">
     <div class="item active">
-        
       <img src="{% static 'images/zef.jpg' %}" alt="First slide">
-
     </div>
       <div class="item">
       <img src="{% static 'images/nalle.jpg' %}" alt="second slide">
-
     </div>
     <div class="item">
       <img src="{% static 'images/peter.jpg' %}" alt="third slide">
@@ -40,13 +35,10 @@
     <span class="glyphicon glyphicon-chevron-right"></span>
   </a>
 </div>
-      
-      
-      
+
     <div class="container">
       <div class="row">
-    
-        <div
+
         {% for galleryGroup in galleryGroups %}
           <div class="col-md-6 galleryOptions">
           <h2> {{ galleryGroup.title }} </h2>
@@ -56,9 +48,7 @@
             </div>
            
         {% endfor %}
-        
-        
-       
+
       </div><!-- /.row -->
     </div>
 
