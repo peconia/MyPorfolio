@@ -6,3 +6,4 @@ db.sqlite3
 *~
 *.py[co]
 settings_secret.py
+.idea/*

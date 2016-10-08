@@ -4,7 +4,8 @@ from .models import GalleryGroup, Artwork
 
 def galleries(request):
     galleryGroups = GalleryGroup.objects.all().order_by('title')
-    return render(request, 'gallery/galleries.html', { 'galleryGroups': galleryGroups })
+    return render(request, 'gallery/galleries.html', {'galleryGroups': galleryGroups})
+
 
 def gallery_detail(request, gallery_title_slug):
     context_dict = {}
@@ -39,7 +40,7 @@ def art_detail(request, art_id):
 
     return render(request, 'gallery/art_detail.html', {'artwork': artwork, 'next': next, 'previous': previous })
 
+
 def about_me(request):
-    
     return render(request, 'gallery/about_me.html')
-    
+

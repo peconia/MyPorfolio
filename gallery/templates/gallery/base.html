@@ -47,13 +47,13 @@
             <ul class="nav navbar-nav">
               <li class="dropdown"><a href="index.html" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-picture"></span> Gallery<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="{% url 'gallery.views.gallery_detail' gallery_title_slug='drawings' %}">Drawings</a></li>
-                    <li><a href="{% url 'gallery.views.gallery_detail' gallery_title_slug='paintings' %}">Paintings</a></li>
+                    <li><a href="{% url 'gallery_detail' gallery_title_slug='drawings' %}">Drawings</a></li>
+                    <li><a href="{% url 'gallery_detail' gallery_title_slug='paintings' %}">Paintings</a></li>
                   </ul>
                 
               </li>
               <li>
-                <a href="{% url 'gallery.views.about_me' %}" ><span class="glyphicon glyphicon-user"></span> About Me</a>
+                <a href="{% url 'aboutMe' %}" ><span class="glyphicon glyphicon-user"></span> About Me</a>
             </li>
             </ul>
           </div><!-- /.navbar-collapse -->

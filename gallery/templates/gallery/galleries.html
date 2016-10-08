@@ -52,7 +52,7 @@
           <h2> {{ galleryGroup.title }} </h2>
           <p>{{ galleryGroup.description|linebreaks }} </p>
           <p><a class="btn btn-lg btn-primary btn-custom" 
-                href='{% url 'gallery.views.gallery_detail' gallery_title_slug=galleryGroup.slug %}'> View {{ galleryGroup.title }} Gallery &raquo; </a></p>
+                href='{% url 'gallery_detail' gallery_title_slug=galleryGroup.slug %}'> View {{ galleryGroup.title }} Gallery &raquo; </a></p>
             </div>
            
         {% endfor %}
