@@ -1,4 +1,4 @@
-Django==1.10.2
+Django==2.2.24
 Markdown==2.6.7
 Pillow==3.4.1
 boto==2.42.0
