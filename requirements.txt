@@ -1,6 +1,6 @@
 Django==1.10.2
 Markdown==2.6.7
-Pillow==3.4.1
+Pillow==9.0.0
 boto==2.42.0
 dj-database-url==0.4.1
 django-storages==1.5.1
