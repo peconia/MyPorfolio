@@ -1,58 +1,54 @@
-{% extends 'gallery/base.html' %}
-{% load staticfiles %} 
+{% extends '../base.html' %}
+{% load static %} 
 {% block content %} 
 
-    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+  <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+      <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+      <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+    </ol>
  
-  <!-- Indicators -->
-  <ol class="carousel-indicators">
-    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-    <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-  </ol>
- 
-  <!-- Slider Content (Wrapper for slides )-->
-  <div class="carousel-inner">
-    <div class="item active">
-      <img src="{% static 'images/zef.jpg' %}" alt="First slide">
-    </div>
+    <!-- Slider Content (Wrapper for slides )-->
+    <div class="carousel-inner">
+      {% for artwork in featured_works %}
       <div class="item">
-      <img src="{% static 'images/nalle.jpg' %}" alt="second slide">
+        <img src="{{ artwork.art.url }}" alt="{{ artwork.title }}">
+      </div>
+      {% endfor %}
     </div>
-    <div class="item">
-      <img src="{% static 'images/peter.jpg' %}" alt="third slide">
-    </div>
-      <div class="item">
-      <img src="{% static 'images/kiina.jpg' %}" alt="fourth slide">
-    </div>
-    </div>
-  <!-- Controls -->
-  <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
-    <span class="glyphicon glyphicon-chevron-left"></span>
-  </a>
-  <a class="right carousel-control" href="#carousel-example-generic" data-slide="next">
-    <span class="glyphicon glyphicon-chevron-right"></span>
-  </a>
-</div>
+    
+    <!-- Controls -->
+    <a class="left carousel-control text-dark" href="#carousel-example-generic" data-slide="prev">
+      <span class="glyphicon glyphicon-chevron-left"></span>
+    </a>
+    <a class="right carousel-control text-dark" href="#carousel-example-generic" data-slide="next">
+      <span class="glyphicon glyphicon-chevron-right"></span>
+    </a>
+  </div>
 
-    <div class="container">
-      <div class="row">
+  <div class="container bg-dark text-light" style="margin-top: 2vh; width: 100vw;">
+    <div class="row">
+      {% if gallery_groups|length != 0 %}
+      <h1 class="text-center">Galleries</h1>
+      {% endif %}
+      {% for gallery_group in gallery_groups %}
+        <div class="col-md-6 galleryOptions">
+        <h2> {{ gallery_group.title }} </h2>
+        <p>{{ gallery_group.description|linebreaks }} </p>
+        <p><a class="btn btn-lg btn-primary btn-custom" 
+              href="{% url 'gallery:gallery_detail' gallery_title_slug=gallery_group.slug %}"> View {{ gallery_group.title }} Gallery &raquo; </a></p>
+          </div>
+      {% endfor %}
+    </div><!-- /.row -->
+  </div>
 
-        {% for galleryGroup in galleryGroups %}
-          <div class="col-md-6 galleryOptions">
-          <h2> {{ galleryGroup.title }} </h2>
-          <p>{{ galleryGroup.description|linebreaks }} </p>
-          <p><a class="btn btn-lg btn-primary btn-custom" 
-                href='{% url 'gallery_detail' gallery_title_slug=galleryGroup.slug %}'> View {{ galleryGroup.title }} Gallery &raquo; </a></p>
-            </div>
-           
-        {% endfor %}
-
-      </div><!-- /.row -->
-    </div>
-
-    {% endblock content %}
+  <script>
+    document.getElementsByClassName('item')[0].classList.add('active'); // Set the first carousel image as active.
+  </script>
+  {% endblock content %}
 
 
 

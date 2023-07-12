@@ -1,9 +1,11 @@
 myvenv
+venv
 __pycache__
 staticfiles
 local_settings.py
 db.sqlite3
 *~
+*.env
 *.py[co]
 settings_secret.py
 .idea/*

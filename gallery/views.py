@@ -2,27 +2,36 @@ from django.shortcuts import render, get_object_or_404
 from .models import GalleryGroup, Artwork
 
 
+def handle_404(request, exception):
+    return render(request, '404.html', context={})
+
+
 def galleries(request):
-    gallery_groups = GalleryGroup.objects.all().order_by('title')
-    return render(request, 'gallery/galleries.html', {'galleryGroups': gallery_groups})
+    featured_works = Artwork.objects.filter(featured=True)
+    
+    context = { 
+        'featured_works': featured_works
+    }
+    
+    return render(request, 'gallery/galleries.html', context)
 
 
 def gallery_detail(request, gallery_title_slug):
-    context_dict = {}
-    
+    context = {}
     try:
-        gallery_groups = GalleryGroup.objects.get(slug=gallery_title_slug)
-        context_dict['galleryGroups'] = gallery_groups
-        artworks = Artwork.objects.filter(group=gallery_groups).order_by('published_date')
-        context_dict['artworks'] = artworks
+        gallery_group = GalleryGroup.objects.get(slug=gallery_title_slug)
+        artworks = Artwork.objects.filter(group=gallery_group).order_by('published_date')
 
+        context['gallery_title_slug'] = gallery_title_slug
+        context['gallery_group'] = gallery_group
+        context['artworks'] = artworks
     except GalleryGroup.DoesNotExist:
         pass
 
-    return render(request, 'gallery/gallery_detail.html', context_dict)
+    return render(request, 'gallery/gallery_detail.html', context)
 
 
-def art_detail(request, art_id):
+def art_detail(request, gallery_title_slug, art_id,):
     artwork = get_object_or_404(Artwork, id=art_id)
     try:
         next_artwork = artwork.get_next_by_published_date()
@@ -38,7 +47,14 @@ def art_detail(request, art_id):
     except Artwork.DoesNotExist:
         previous = None
 
-    return render(request, 'gallery/art_detail.html', {'artwork': artwork, 'next': next_artwork, 'previous': previous})
+    context = {
+        'gallery_title_slug': gallery_title_slug,
+        'artwork': artwork,
+        'next': next_artwork,
+        'previous': previous
+    }
+
+    return render(request, 'gallery/art_detail.html', context)
 
 
 def about_me(request):

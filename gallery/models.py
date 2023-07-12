@@ -1,12 +1,11 @@
 from django.db import models
-from django.core.urlresolvers import reverse
+from django.urls import reverse
 from django.template.defaultfilters import slugify
 
 
 class GalleryGroup(models.Model):
-
     title = models.CharField(max_length=100, default='')
-    description = models.TextField()
+    description = models.TextField(blank=True, default='')
     slug = models.SlugField(unique=True)
 
     def __str__(self):
@@ -22,10 +21,11 @@ class GalleryGroup(models.Model):
 
 class Artwork(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    description = models.TextField(blank=True, default='')
     published_date = models.DateTimeField(blank=True)
     art = models.ImageField(upload_to="art")
-    group = models.ForeignKey('GalleryGroup')
+    group = models.ForeignKey('GalleryGroup', on_delete=models.CASCADE)
+    featured = models.BooleanField(help_text='Feature this artwork on the home page')
 
     def publish(self):
         self.save()
