@@ -1,6 +1,46 @@
 
+/* --------------------- */
+/* Custom properties     */
+/* --------------------- */
+:root {
+    /* Colors */
+    --clr-dark: 0, 0%, 13%;
+    --clr-light: 210, 17%, 98%;
+    --clr-darkpurple: 270, 95%, 23%;
+    --clr-darkpurple-hover: 270, 96%, 18%;
+    --clr-border-dark: 270, 94%, 13%;
+
+    /* Font-sizes */
+    --fs-900: 9.375rem;
+    --fs-850: 7.813rem;
+    --fs-800: 6.25rem;
+    --fs-750: 4.875rem;
+    --fs-700: 3.5rem;
+    --fs-650: 2.75rem;
+    --fs-600: 2rem;
+    --fs-550: 1.875rem;
+    --fs-500: 1.75rem;
+    --fs-450: 1.313rem;
+    --fs-400: 1.125rem;
+    --fs-350: 1.06rem;
+    --fs-300: 1rem;
+    --fs-250: 0.94rem;
+    --fs-200: 0.875rem;
+    --fs-150: 0.81rem;
+    --fs-100: 0.75rem;
+    --fs-0: 0.625rem;
+
+    /* Font families */
+    --ff-neucha: 'Neucha', cursive;
+    --ff-comingsoon: 'Coming Soon', cursive;
+}
+
 body {
     padding-top: 60px; /* Required padding for .navbar-fixed-top. Change if height of navigation changes. */
+}
+
+.content-wrapper {
+    margin-top: 2vh;
 }
 
 .thumb {
@@ -78,8 +118,8 @@ p {
 }
 
 .galleryOptions {
-      text-align: center;
-    }
+    text-align: center;
+}
 
 .myface {
     margin-top: 40px;
@@ -93,23 +133,25 @@ body {
 /* remove gradient background form carousel */
 .carousel-control.right, .carousel-control.left {
   background-image:none;
+  color: #202830;
 }
 
 
 /* custom button code */
-
 .btn-custom {
-  background-color: #3a0371;
-  border-color: #3a0371;
+  background-color: hsl(var(--clr-darkpurple));
+  border-color: hsl(var(--clr-darkpurple));
   font-family: 'Neucha', cursive;
 }
+
 .btn-custom:hover,
 .btn-custom:focus,
 .btn-custom:active,
 .btn-custom.active {
-  background-color: #2d0258;
-  border-color: #21023f;
+  background-color: hsl(var(--clr-darkpurple-hover));
+  border-color: hsl(var(--clr-border-dark));
 }
+
 .btn-custom.disabled:hover,
 .btn-custom.disabled:focus,
 .btn-custom.disabled:active,
@@ -122,10 +164,61 @@ fieldset[disabled] .btn-custom:hover,
 fieldset[disabled] .btn-custom:focus,
 fieldset[disabled] .btn-custom:active,
 fieldset[disabled] .btn-custom.active {
-  background-color: #3a0371;
-  border-color: #3a0371;
+    background-color: hsl(var(--clr-darkpurple));
+    border-color: hsl(var(--clr-darkpurple));
+}
+
+/* Custom background colors */
+.bg-dark { background-color: hsl(var(--clr-dark)); }
+.bg-light { background-color: hsl(var(--clr-light)); }
+
+/* Custom text colors */
+.text-dark { color: hsl(var(--clr-dark)); }
+.text-light { color: hsl(var(--clr-light)); }
+
+/* Typography */
+.ff-neucha { font-family: var(--ff-neucha); }
+.ff-comingsoon { font-family: var(--ff-comingsoon); }
+.ff-neucha-bolder { font-family: var(--ff-neucha); font-weight: 500; }
+.ff-neucha-bold { font-family: var(--ff-neucha); font-weight: 600; }
+.ff-comingsoon-bolder { font-family: var(--ff-comingsoon); font-weight: 500; }
+.ff-comingsoon-bold { font-family: var(--ff-comingsoon); font-weight: 600; }
+
+.letter-spacing-1 { letter-spacing: 4.75px; }
+.letter-spacing-2 { letter-spacing: 2.7px; }
+.letter-spacing-3 { letter-spacing: 2.35px; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+
+.text-center{text-align: center!important}
+
+.fs-900 { font-size: var(--fs-900); }
+.fs-850 { font-size: var(--fs-850); }
+.fs-800 { font-size: var(--fs-800); }
+.fs-750 { font-size: var(--fs-750); }
+.fs-700 { font-size: var(--fs-700); }
+.fs-650 { font-size: var(--fs-650); }
+.fs-600 { font-size: var(--fs-600); }
+.fs-550 { font-size: var(--fs-550); }
+.fs-500 { font-size: var(--fs-500); }
+.fs-450 { font-size: var(--fs-450); }
+.fs-400 { font-size: var(--fs-400); }
+.fs-350 { font-size: var(--fs-350); }
+.fs-300 { font-size: var(--fs-300); }
+.fs-250 { font-size: var(--fs-250); }
+.fs-200 { font-size: var(--fs-200); }
+.fs-150 { font-size: var(--fs-150); }
+.fs-100 { font-size: var(--fs-100); }
+.fs-0 { font-size: var(--fs-0); }
+
+.fs-900,
+.fs-800,
+.fs-700,
+.fs-600 {
+    line-height: 1.1;
 }
 
 
-
+/* Typography */
 

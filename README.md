@@ -9,4 +9,3 @@ later works in same gallery group are available, you get links to scroll over to
 The live website has been deployed to Heroku and can be viewed at 
 https://paivisuomela.herokuapp.com
 
-

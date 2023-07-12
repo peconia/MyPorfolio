@@ -1,35 +1,30 @@
-{% extends 'gallery/base.html' %}
+{% extends '../base.html' %}
 {% block content %} 
-
     <div class="container">
         {% if artworks %}
         <div class="row">
             <div class="col-md-10">        
-                <h1> {{ galleryGroups.title }} Gallery </h1>
-                <p>{{ galleryGroups.description|linebreaks }} </p>
+                <h1> {{ gallery_group.title }} Gallery </h1>
+                <p>{{ gallery_group.description|linebreaks }} </p>
                 <p>Click an image to view further details.</p>
             </div>
         </div> 
-
         <div class="row" id='art-images'>
             {% for artwork in artworks %}
-
-            <div class="col-lg-4 col-md-6 col-xs-12 thumb image-box">
-                <a class="thumbnail" href='{% url "art" art_id=artwork.id %}'>
+            <div class="col-lg-4 col-md-6 col-xs-12 thumb image-box" style="padding: 0 1vw 1vw 1vw;">
+                <a class="thumbnail" href='{% url "gallery:art" gallery_title_slug=gallery_title_slug art_id=artwork.id %}'>
                     <img class="img-responsive" src="{{ artwork.art.url }}" alt="{{ artwork.title }}">
                 </a>
             </div>
             {% endfor %}
         </div> <!-- row -->
         {% else %}  
-
-            <div class="row">
-                <div class="col-md-10">  
-                    <h1>Oopsie!</h1>
-                    <p>No galleries with that name found.</p>
-                </div>
+        <div class="row">
+            <div class="col-md-10">  
+                <h1>Oopsie!</h1>
+                <p>No galleries with that name found.</p>
             </div>
+        </div>
         {% endif %}
-        </div> <!-- container -->
-
+    </div> <!-- container -->
 {% endblock content %}
